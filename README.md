@@ -70,6 +70,7 @@ csv-files/
   dict_Adjektive_*.csv
 
 test.py
+pruefung.py
 pixi.toml
 ```
 
@@ -129,3 +130,36 @@ pixi run test
 Das Testprogramm zeigt alle CSV-Dateien aus `csv-files/` an. Danach kann eine
 Liste per Nummer ausgewählt und die Anzahl der abzufragenden Wörter festgelegt
 werden.
+
+`test.py` enthält außerdem die gemeinsame Logik zum Laden, Abfragen und Loggen
+eines einzelnen Vokabeltests. Das Prüfungsprogramm nutzt diese Funktionen und
+startet mehrere normale Testläufe nacheinander.
+
+## Prüfungsprogramm starten
+
+```bash
+pixi run pruefung
+```
+
+Das Prüfungsprogramm fragt eine längere Serie über mehrere Themen hinweg ab,
+zum Beispiel 200 bis 500 Wörter. Dabei verteilt es die Wörter auf mehrere
+passende CSV-Listen und startet pro Liste einen normalen `test.py`-Lauf. Die
+Einzellogs landen weiterhin in `training_log/`.
+
+Zusätzlich schreibt das Prüfungsprogramm eine Gesamtauswertung nach
+`pruefungs_log/<lauf>/`:
+
+- `alle_antworten.csv`
+- `falsch_beantwortet.csv`
+- `statistik_themen.csv`
+- `statistik_wortarten.csv`
+- `einzellaeufe.csv`
+- `zusammenfassung.txt`
+
+Beispiele:
+
+```bash
+pixi run pruefung --count 300 --topics Haus,Essen,Familie
+pixi run pruefung --count 200 --word-types Nomen,Verben --no-reverse
+pixi run pruefung --count 150 --topics Arbeit,Bewerbung --reverse
+```

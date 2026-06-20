@@ -23,4 +23,5 @@ env/
 # Generated vocabulary test logs
 vocab_test_log_*.csv
 training_log/
+pruefungs_log/
 validation_reports/
