@@ -1,19 +1,24 @@
 import pandas as pd
 
 words = {
-    "the sun": "Die Sonne", 
-    "the moon": "Der Mond", 
-    "the stars": "Die Sterne", 
-    "the fridge": "Der Kühlschrank", 
-    "the window": "Das Fenster", 
-    "the table": "Der Tisch", 
-    "the chair": "Der Stuhl", 
-    "the fork": "Die Gabel", 
-    "the spoon": "Der Löffel",
-    "the cup": "Die Tasse",
-    "the plate": "Der Teller",
-    "the glass": "Das Glas",
-    "the marmelade": "Die Marmelade"
+    "the sun": "die Sonne", 
+    "the moon": "der Mond", 
+    "the stars": "die Sterne", 
+    "the fridge": "der Kühlschrank", 
+    "the window": "das Fenster", 
+    "the table": "der Tisch", 
+    "the chair": "der Stuhl", 
+    "the fork": "die Gabel", 
+    "the spoon": "der Löffel",
+    "the cup": "die Tasse",
+    "the plate": "der Teller",
+    "the glass": "das Glas",
+    "the marmelade": "die Marmelade", 
+    "the drawer": "die Schublade",
+    "the ofen": "der Backofen",
+    "the bed": "das Bett",
+    "the lamp": "die Lampe",
+    "the door": "die Tür"
 }
 
 df = pd.DataFrame.from_dict(
@@ -24,5 +29,5 @@ df = pd.DataFrame.from_dict(
 
 df.index.name = "English"
 
-df.to_csv("dict.csv")
+df.to_csv("dict_Haus.csv")
 

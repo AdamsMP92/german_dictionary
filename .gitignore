@@ -1,0 +1,24 @@
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# Virtual environments and local Pixi environment
+.venv/
+venv/
+env/
+.pixi/
+
+# Local editor and OS files
+.DS_Store
+.idea/
+.vscode/
+
+# Generated vocabulary test logs
+vocab_test_log_*.csv
