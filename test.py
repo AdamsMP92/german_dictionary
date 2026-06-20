@@ -39,7 +39,32 @@ if not dictionary_path.exists():
 # Dictionary laden
 # ------------------------------------------------------------
 
-df = pd.read_csv(dictionary_path, usecols=["English", "German"])
+df = pd.read_csv(dictionary_path)
+
+if len(df.columns) < 2:
+    raise ValueError("Dictionary file muss mindestens zwei Spalten haben.")
+
+prompt_column = df.columns[0]
+answer_column = df.columns[1]
+df = df[[prompt_column, answer_column]].rename(
+    columns={
+        prompt_column: "Prompt",
+        answer_column: "ExpectedAnswer",
+    }
+)
+
+swap_input = input(
+    "Abfragerichtung umkehren? [j/N] "
+).strip().lower()
+
+if swap_input in {"j", "ja", "y", "yes"}:
+    prompt_column, answer_column = answer_column, prompt_column
+    df = df.rename(
+        columns={
+            "Prompt": "ExpectedAnswer",
+            "ExpectedAnswer": "Prompt",
+        }
+    )
 
 n_available = len(df)
 
@@ -75,7 +100,9 @@ while True:
 test_start = datetime.now()
 test_start_string = test_start.strftime("%Y-%m-%d_%H-%M-%S")
 
-log_file = f"vocab_test_log_{test_start_string}.csv"
+log_dir = Path("training_log")
+log_dir.mkdir(exist_ok=True)
+log_file = log_dir / f"vocab_test_log_{test_start_string}.csv"
 
 df = df.sample(frac=1).reset_index(drop=True)
 df = df.head(n_words)
@@ -91,34 +118,38 @@ print("\nVokabeltest gestartet.")
 print(f"Dictionary file: {dictionary_path}")
 print(f"Verfügbare Vokabeln: {n_available}")
 print(f"Abgefragte Vokabeln: {n_words}")
+print(f"Frage-Spalte: {prompt_column}")
+print(f"Antwort-Spalte: {answer_column}")
 print(f"Logfile: {log_file}")
 print("Gib 'q' ein, um abzubrechen.\n")
 
 
 for _, row in df.iterrows():
-    english = row["English"]
-    correct_german = row["German"]
+    prompt = row["Prompt"]
+    expected_answer = row["ExpectedAnswer"]
 
-    print(f"Englisch: {english}")
-    answer = input("Deutsch: ").strip()
+    print(f"{prompt_column}: {prompt}")
+    answer = input(f"{answer_column}: ").strip()
 
     if answer.lower() == "q":
         break
 
-    is_correct = answer.lower() == correct_german.strip().lower()
+    is_correct = answer.lower() == str(expected_answer).strip().lower()
 
     if is_correct:
         print("Richtig.\n")
     else:
-        print(f"Falsch. Richtig wäre: {correct_german}\n")
+        print(f"Falsch. Richtig wäre: {expected_answer}\n")
 
     results.append({
         "test_start": test_start.isoformat(timespec="seconds"),
         "answer_time": datetime.now().isoformat(timespec="seconds"),
         "dictionary_file": str(dictionary_path),
-        "English": english,
-        "German_correct": correct_german,
-        "German_given": answer,
+        "prompt_column": prompt_column,
+        "answer_column": answer_column,
+        "prompt": prompt,
+        "expected_answer": expected_answer,
+        "given_answer": answer,
         "correct": is_correct,
     })
 
@@ -145,6 +176,8 @@ if len(log_df) > 0:
         f.write("\n")
         f.write("# Statistik\n")
         f.write(f"# Dictionary file,{dictionary_path}\n")
+        f.write(f"# Frage-Spalte,{prompt_column}\n")
+        f.write(f"# Antwort-Spalte,{answer_column}\n")
         f.write(f"# Testbeginn,{test_start.isoformat(timespec='seconds')}\n")
         f.write(f"# Verfügbare Vokabeln,{n_available}\n")
         f.write(f"# Gewählte Vokabeln,{n_words}\n")
@@ -156,9 +189,9 @@ if len(log_df) > 0:
         if len(wrong_words) > 0:
             f.write("\n")
             f.write("# Falsch beantwortete Vokabeln\n")
-            f.write("English,German_correct,German_given\n")
+            f.write("prompt,expected_answer,given_answer\n")
 
-            wrong_words[["English", "German_correct", "German_given"]].to_csv(
+            wrong_words[["prompt", "expected_answer", "given_answer"]].to_csv(
                 f,
                 index=False,
                 header=False,
@@ -176,7 +209,7 @@ if len(log_df) > 0:
 
     if len(wrong_words) > 0:
         print("\nFalsch beantwortete Vokabeln:")
-        print(wrong_words[["English", "German_correct", "German_given"]])
+        print(wrong_words[["prompt", "expected_answer", "given_answer"]])
 
 else:
     print("Keine Antworten gespeichert.")
