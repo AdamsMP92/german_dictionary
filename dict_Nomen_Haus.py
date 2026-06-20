@@ -167,8 +167,7 @@ words = {
     "the keyboard": "die Tastatur",
     "the mouse": "die Maus",
     "the monitor": "der Bildschirm",
-    "the trash": "der Müll",
-    "the marmalade": "die Marmelade"
+    "the trash": "der Müll"
 }
 
 df = pd.DataFrame.from_dict(
@@ -179,4 +178,4 @@ df = pd.DataFrame.from_dict(
 
 df.index.name = "English"
 
-df.to_csv("dict_Haus.csv")
+df.to_csv("dict_Nomen_Haus.csv")

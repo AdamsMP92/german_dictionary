@@ -1,0 +1,54 @@
+import pandas as pd
+
+words = {
+    "the work": "die Arbeit",
+    "the job": "der Job",
+    "the profession": "der Beruf",
+    "the workplace": "der Arbeitsplatz",
+    "the office": "das Büro",
+    "the company": "die Firma",
+    "the business": "das Unternehmen",
+    "the department": "die Abteilung",
+    "the team": "das Team",
+    "the colleague": "der Kollege",
+    "the boss": "der Chef",
+    "the manager": "der Manager",
+    "the employee": "der Mitarbeiter",
+    "the customer": "der Kunde",
+    "the client": "der Auftraggeber",
+    "the meeting": "die Besprechung",
+    "the appointment": "der Termin",
+    "the task": "die Aufgabe",
+    "the project": "das Projekt",
+    "the deadline": "die Frist",
+    "the contract": "der Vertrag",
+    "the salary": "das Gehalt",
+    "the invoice": "die Rechnung",
+    "the order": "der Auftrag",
+    "the presentation": "die Präsentation",
+    "the report": "der Bericht",
+    "the file": "die Datei",
+    "the document": "das Dokument",
+    "the email": "die E-Mail",
+    "the phone call": "das Telefonat",
+    "the computer": "der Computer",
+    "the laptop": "der Laptop",
+    "the keyboard": "die Tastatur",
+    "the mouse": "die Maus",
+    "the screen": "der Bildschirm",
+    "the printer": "der Drucker",
+    "the notebook": "das Notizbuch",
+    "the pen": "der Stift",
+    "the folder": "der Ordner",
+    "the desk": "der Schreibtisch"
+}
+
+df = pd.DataFrame.from_dict(
+    words,
+    orient="index",
+    columns=["German"]
+)
+
+df.index.name = "English"
+
+df.to_csv("dict_Nomen_Arbeit.csv")

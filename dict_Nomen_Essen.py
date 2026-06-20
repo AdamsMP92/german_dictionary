@@ -1,0 +1,54 @@
+import pandas as pd
+
+words = {
+    "the food": "das Essen",
+    "the meal": "die Mahlzeit",
+    "the breakfast": "das Frühstück",
+    "the lunch": "das Mittagessen",
+    "the dinner": "das Abendessen",
+    "the snack": "der Snack",
+    "the bread": "das Brot",
+    "the roll": "das Brötchen",
+    "the butter": "die Butter",
+    "the cheese": "der Käse",
+    "the sausage": "die Wurst",
+    "the ham": "der Schinken",
+    "the egg": "das Ei",
+    "the soup": "die Suppe",
+    "the salad": "der Salat",
+    "the potato": "die Kartoffel",
+    "the rice": "der Reis",
+    "the pasta": "die Nudeln",
+    "the vegetable": "das Gemüse",
+    "the fruit": "das Obst",
+    "the apple": "der Apfel",
+    "the banana": "die Banane",
+    "the orange": "die Orange",
+    "the tomato": "die Tomate",
+    "the cucumber": "die Gurke",
+    "the carrot": "die Karotte",
+    "the onion": "die Zwiebel",
+    "the garlic": "der Knoblauch",
+    "the meat": "das Fleisch",
+    "the fish": "der Fisch",
+    "the chicken": "das Hähnchen",
+    "the beef": "das Rindfleisch",
+    "the pork": "das Schweinefleisch",
+    "the dessert": "der Nachtisch",
+    "the cake": "der Kuchen",
+    "the chocolate": "die Schokolade",
+    "the marmalade": "die Marmelade",
+    "the water": "das Wasser",
+    "the coffee": "der Kaffee",
+    "the tea": "der Tee"
+}
+
+df = pd.DataFrame.from_dict(
+    words,
+    orient="index",
+    columns=["German"]
+)
+
+df.index.name = "English"
+
+df.to_csv("dict_Nomen_Essen.csv")

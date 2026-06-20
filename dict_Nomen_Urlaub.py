@@ -1,0 +1,54 @@
+import pandas as pd
+
+words = {
+    "the vacation": "der Urlaub",
+    "the trip": "die Reise",
+    "the journey": "die Fahrt",
+    "the destination": "das Reiseziel",
+    "the country": "das Land",
+    "the island": "die Insel",
+    "the beach": "der Strand",
+    "the sea": "das Meer",
+    "the lake": "der See",
+    "the mountain": "der Berg",
+    "the hotel": "das Hotel",
+    "the room": "das Zimmer",
+    "the reception": "die Rezeption",
+    "the reservation": "die Reservierung",
+    "the booking": "die Buchung",
+    "the passport": "der Reisepass",
+    "the identity card": "der Personalausweis",
+    "the ticket": "das Ticket",
+    "the flight": "der Flug",
+    "the airport": "der Flughafen",
+    "the airplane": "das Flugzeug",
+    "the train station": "der Bahnhof",
+    "the suitcase": "der Koffer",
+    "the backpack": "der Rucksack",
+    "the bag": "die Tasche",
+    "the map": "die Karte",
+    "the guidebook": "der Reiseführer",
+    "the camera": "die Kamera",
+    "the sunscreen": "die Sonnencreme",
+    "the sunglasses": "die Sonnenbrille",
+    "the towel": "das Handtuch",
+    "the swimsuit": "der Badeanzug",
+    "the swimming trunks": "die Badehose",
+    "the excursion": "der Ausflug",
+    "the sight": "die Sehenswürdigkeit",
+    "the tour": "die Tour",
+    "the restaurant": "das Restaurant",
+    "the bill": "die Rechnung",
+    "the souvenir": "das Souvenir",
+    "the weather": "das Wetter"
+}
+
+df = pd.DataFrame.from_dict(
+    words,
+    orient="index",
+    columns=["German"]
+)
+
+df.index.name = "English"
+
+df.to_csv("dict_Nomen_Urlaub.csv")
