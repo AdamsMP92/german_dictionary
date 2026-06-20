@@ -20,7 +20,10 @@ words = {
     'to reject': 'ablehnen',
     'to accept': 'akzeptieren',
     'to conclude': 'schlussfolgern',
-    'to evaluate': 'bewerten'
+    'to evaluate': 'bewerten',
+    'to claim': 'behaupten',
+    'to prove': 'beweisen',
+    'to assume': 'annehmen'
 }
 
 df = pd.DataFrame.from_dict(

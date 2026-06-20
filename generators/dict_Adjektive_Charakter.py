@@ -20,7 +20,10 @@ words = {
     'calm': 'ruhig',
     'nervous': 'nervös',
     'optimistic': 'optimistisch',
-    'pessimistic': 'pessimistisch'
+    'pessimistic': 'pessimistisch',
+    'modest': 'bescheiden',
+    'arrogant': 'arrogant',
+    'empathetic': 'empathisch'
 }
 
 df = pd.DataFrame.from_dict(

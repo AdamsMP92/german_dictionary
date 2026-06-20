@@ -20,7 +20,10 @@ words = {
     'to melt': 'schmelzen',
     'to protect': 'schützen',
     'to get wet': 'nass werden',
-    'to dry': 'trocknen'
+    'to dry': 'trocknen',
+    'to hail': 'hageln',
+    'to cool down': 'abkühlen',
+    'to warm up': 'sich erwärmen'
 }
 
 df = pd.DataFrame.from_dict(

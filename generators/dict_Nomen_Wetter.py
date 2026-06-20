@@ -20,7 +20,12 @@ words = {
     'the umbrella': 'der Regenschirm',
     'the rainbow': 'der Regenbogen',
     'the climate': 'das Klima',
-    'the season': 'die Jahreszeit'
+    'the season': 'die Jahreszeit',
+    'the drizzle': 'der Nieselregen',
+    'the hail': 'der Hagel',
+    'the frost': 'der Frost',
+    'the humidity': 'die Luftfeuchtigkeit',
+    'the air pressure': 'der Luftdruck'
 }
 
 df = pd.DataFrame.from_dict(

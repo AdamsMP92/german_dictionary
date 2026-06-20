@@ -20,7 +20,10 @@ words = {
     'permanent': 'dauerhaft',
     'regular': 'regelmäßig',
     'rare': 'selten',
-    'frequent': 'häufig'
+    'frequent': 'häufig',
+    'immediate': 'sofortig',
+    'previous': 'vorherig',
+    'following': 'folgend'
 }
 
 df = pd.DataFrame.from_dict(

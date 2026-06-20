@@ -20,7 +20,10 @@ words = {
     'clear': 'klar',
     'gray': 'grau',
     'fresh': 'frisch',
-    'changeable': 'wechselhaft'
+    'changeable': 'wechselhaft',
+    'overcast': 'bedeckt',
+    'frosty': 'frostig',
+    'muggy': 'schwül'
 }
 
 df = pd.DataFrame.from_dict(

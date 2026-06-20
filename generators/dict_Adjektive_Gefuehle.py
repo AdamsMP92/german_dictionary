@@ -20,7 +20,10 @@ words = {
     'confident': 'zuversichtlich',
     'disappointed': 'enttäuscht',
     'surprised': 'überrascht',
-    'satisfied': 'zufrieden'
+    'satisfied': 'zufrieden',
+    'relieved': 'erleichtert',
+    'moved': 'gerührt',
+    'homesick': 'heimwehkrank'
 }
 
 df = pd.DataFrame.from_dict(

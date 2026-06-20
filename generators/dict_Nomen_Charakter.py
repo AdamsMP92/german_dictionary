@@ -20,7 +20,12 @@ words = {
     'the curiosity': 'die Neugier',
     'the creativity': 'die Kreativität',
     'the loyalty': 'die Treue',
-    'the attitude': 'die Haltung'
+    'the attitude': 'die Haltung',
+    'the modesty': 'die Bescheidenheit',
+    'the arrogance': 'die Arroganz',
+    'the empathy': 'die Empathie',
+    'the reliability': 'die Zuverlässigkeit',
+    'the openness': 'die Offenheit'
 }
 
 df = pd.DataFrame.from_dict(

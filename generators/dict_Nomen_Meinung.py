@@ -20,7 +20,12 @@ words = {
     'the perspective': 'die Perspektive',
     'the conclusion': 'die Schlussfolgerung',
     'the doubt': 'der Zweifel',
-    'the belief': 'die Überzeugung'
+    'the belief': 'die Überzeugung',
+    'the claim': 'die Behauptung',
+    'the evidence': 'der Beweis',
+    'the assumption': 'die Annahme',
+    'the consent': 'das Einverständnis',
+    'the contradiction': 'der Widerspruch'
 }
 
 df = pd.DataFrame.from_dict(

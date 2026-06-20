@@ -20,7 +20,12 @@ words = {
     'the stress': 'der Stress',
     'the calm': 'die Ruhe',
     'the patience': 'die Geduld',
-    'the mood': 'die Stimmung'
+    'the mood': 'die Stimmung',
+    'the relief': 'die Erleichterung',
+    'the disappointment': 'die Enttäuschung',
+    'the excitement': 'die Aufregung',
+    'the affection': 'die Zuneigung',
+    'the homesickness': 'das Heimweh'
 }
 
 df = pd.DataFrame.from_dict(

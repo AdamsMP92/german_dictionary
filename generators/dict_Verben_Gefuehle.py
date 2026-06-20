@@ -20,7 +20,10 @@ words = {
     'to surprise': 'überraschen',
     'to enjoy': 'genießen',
     'to suffer': 'leiden',
-    'to motivate': 'motivieren'
+    'to motivate': 'motivieren',
+    'to cheer up': 'aufmuntern',
+    'to disappoint': 'enttäuschen',
+    'to comfort': 'trösten'
 }
 
 df = pd.DataFrame.from_dict(

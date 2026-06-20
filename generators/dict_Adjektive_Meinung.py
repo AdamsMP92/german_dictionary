@@ -20,7 +20,10 @@ words = {
     'controversial': 'umstritten',
     'interesting': 'interessant',
     'boring': 'langweilig',
-    'possible': 'möglich'
+    'possible': 'möglich',
+    'probable': 'wahrscheinlich',
+    'doubtful': 'zweifelhaft',
+    'obvious': 'offensichtlich'
 }
 
 df = pd.DataFrame.from_dict(

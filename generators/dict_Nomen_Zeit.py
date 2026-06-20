@@ -20,7 +20,12 @@ words = {
     'the appointment': 'der Termin',
     'the deadline': 'die Frist',
     'the calendar': 'der Kalender',
-    'the schedule': 'der Zeitplan'
+    'the schedule': 'der Zeitplan',
+    'the duration': 'die Dauer',
+    'the period': 'der Zeitraum',
+    'the delay': 'die Verspätung',
+    'the beginning': 'der Anfang',
+    'the end': 'das Ende'
 }
 
 df = pd.DataFrame.from_dict(

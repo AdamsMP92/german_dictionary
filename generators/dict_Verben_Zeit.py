@@ -20,7 +20,10 @@ words = {
     'to waste time': 'Zeit verschwenden',
     'to count': 'zählen',
     'to measure': 'messen',
-    'to pause': 'pausieren'
+    'to pause': 'pausieren',
+    'to continue': 'fortsetzen',
+    'to interrupt': 'unterbrechen',
+    'to finish on time': 'rechtzeitig fertig werden'
 }
 
 df = pd.DataFrame.from_dict(

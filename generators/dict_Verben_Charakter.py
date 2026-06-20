@@ -20,7 +20,10 @@ words = {
     'to praise': 'loben',
     'to change': 'sich ändern',
     'to learn': 'lernen',
-    'to improve': 'sich verbessern'
+    'to improve': 'sich verbessern',
+    'to take responsibility': 'Verantwortung übernehmen',
+    'to keep a promise': 'ein Versprechen halten',
+    'to admit a mistake': 'einen Fehler zugeben'
 }
 
 df = pd.DataFrame.from_dict(
