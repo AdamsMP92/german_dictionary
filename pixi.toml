@@ -1,0 +1,12 @@
+[workspace]
+name = "dictionary"
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[dependencies]
+python = ">=3.12"
+pandas = "*"
+
+[tasks]
+create-dictionary = "python dictionary.py"
+test = "python test.py"
