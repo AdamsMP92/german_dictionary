@@ -1,0 +1,54 @@
+import pandas as pd
+
+words = {
+    "to go": "gehen",
+    "to walk": "laufen",
+    "to drive": "fahren",
+    "to ride": "fahren",
+    "to take the bus": "Bus fahren",
+    "to take the train": "Zug fahren",
+    "to change trains": "umsteigen",
+    "to get on": "einsteigen",
+    "to get off": "aussteigen",
+    "to wait": "warten",
+    "to cross": "überqueren",
+    "to turn": "abbiegen",
+    "to park": "parken",
+    "to stop": "halten",
+    "to ask for directions": "nach dem Weg fragen",
+    "to show": "zeigen",
+    "to visit": "besuchen",
+    "to shop": "einkaufen",
+    "to pay": "bezahlen",
+    "to order": "bestellen",
+    "to reserve": "reservieren",
+    "to meet": "treffen",
+    "to live": "wohnen",
+    "to rent": "mieten",
+    "to move": "umziehen",
+    "to build": "bauen",
+    "to renovate": "renovieren",
+    "to repair": "reparieren",
+    "to open": "öffnen",
+    "to close": "schließen",
+    "to enter": "betreten",
+    "to leave": "verlassen",
+    "to register": "anmelden",
+    "to report": "melden",
+    "to help": "helfen",
+    "to search": "suchen",
+    "to find": "finden",
+    "to photograph": "fotografieren",
+    "to explore": "erkunden",
+    "to get lost": "sich verlaufen"
+}
+
+df = pd.DataFrame.from_dict(
+    words,
+    orient="index",
+    columns=["German"]
+)
+
+df.index.name = "English"
+
+df.to_csv("dict_Verben_Stadt.csv")

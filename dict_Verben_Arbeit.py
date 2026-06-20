@@ -1,0 +1,54 @@
+import pandas as pd
+
+words = {
+    "to work": "arbeiten",
+    "to earn": "verdienen",
+    "to apply": "sich bewerben",
+    "to hire": "einstellen",
+    "to quit": "kündigen",
+    "to manage": "leiten",
+    "to plan": "planen",
+    "to organize": "organisieren",
+    "to schedule": "terminieren",
+    "to discuss": "besprechen",
+    "to decide": "entscheiden",
+    "to present": "präsentieren",
+    "to explain": "erklären",
+    "to write": "schreiben",
+    "to read": "lesen",
+    "to call": "anrufen",
+    "to email": "mailen",
+    "to print": "drucken",
+    "to scan": "scannen",
+    "to copy": "kopieren",
+    "to save": "speichern",
+    "to open": "öffnen",
+    "to close": "schließen",
+    "to send": "senden",
+    "to receive": "empfangen",
+    "to calculate": "berechnen",
+    "to check": "prüfen",
+    "to review": "überprüfen",
+    "to correct": "korrigieren",
+    "to improve": "verbessern",
+    "to support": "unterstützen",
+    "to coordinate": "koordinieren",
+    "to report": "berichten",
+    "to negotiate": "verhandeln",
+    "to sign": "unterschreiben",
+    "to approve": "genehmigen",
+    "to reject": "ablehnen",
+    "to train": "schulen",
+    "to commute": "pendeln",
+    "to collaborate": "zusammenarbeiten"
+}
+
+df = pd.DataFrame.from_dict(
+    words,
+    orient="index",
+    columns=["German"]
+)
+
+df.index.name = "English"
+
+df.to_csv("dict_Verben_Arbeit.csv")

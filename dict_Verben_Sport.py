@@ -1,0 +1,54 @@
+import pandas as pd
+
+words = {
+    "to exercise": "trainieren",
+    "to play": "spielen",
+    "to run": "laufen",
+    "to jog": "joggen",
+    "to swim": "schwimmen",
+    "to cycle": "Rad fahren",
+    "to climb": "klettern",
+    "to ski": "Ski fahren",
+    "to skate": "Schlittschuh laufen",
+    "to jump": "springen",
+    "to throw": "werfen",
+    "to catch": "fangen",
+    "to kick": "schießen",
+    "to hit": "schlagen",
+    "to score": "ein Tor schießen",
+    "to win": "gewinnen",
+    "to lose": "verlieren",
+    "to draw": "unentschieden spielen",
+    "to compete": "antreten",
+    "to participate": "teilnehmen",
+    "to practice": "üben",
+    "to warm up": "sich aufwärmen",
+    "to stretch": "sich dehnen",
+    "to lift": "heben",
+    "to push": "drücken",
+    "to pull": "ziehen",
+    "to breathe": "atmen",
+    "to sweat": "schwitzen",
+    "to rest": "sich ausruhen",
+    "to recover": "sich erholen",
+    "to injure oneself": "sich verletzen",
+    "to defend": "verteidigen",
+    "to attack": "angreifen",
+    "to pass": "passen",
+    "to block": "blocken",
+    "to referee": "pfeifen",
+    "to cheer": "jubeln",
+    "to coach": "trainieren",
+    "to qualify": "sich qualifizieren",
+    "to improve": "sich verbessern"
+}
+
+df = pd.DataFrame.from_dict(
+    words,
+    orient="index",
+    columns=["German"]
+)
+
+df.index.name = "English"
+
+df.to_csv("dict_Verben_Sport.csv")
