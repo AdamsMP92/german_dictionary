@@ -1,0 +1,34 @@
+import pandas as pd
+
+words = {
+    'the nature': 'die Natur',
+    'the forest': 'der Wald',
+    'the tree': 'der Baum',
+    'the flower': 'die Blume',
+    'the grass': 'das Gras',
+    'the river': 'der Fluss',
+    'the lake': 'der See',
+    'the mountain': 'der Berg',
+    'the valley': 'das Tal',
+    'the animal': 'das Tier',
+    'the bird': 'der Vogel',
+    'the fish': 'der Fisch',
+    'the insect': 'das Insekt',
+    'the leaf': 'das Blatt',
+    'the root': 'die Wurzel',
+    'the stone': 'der Stein',
+    'the earth': 'die Erde',
+    'the air': 'die Luft',
+    'the water': 'das Wasser',
+    'the environment': 'die Umwelt'
+}
+
+df = pd.DataFrame.from_dict(
+    words,
+    orient="index",
+    columns=["German"]
+)
+
+df.index.name = "English"
+
+df.to_csv("../csv-files/dict_Nomen_Natur.csv")

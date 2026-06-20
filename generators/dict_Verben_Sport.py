@@ -38,7 +38,7 @@ words = {
     "to block": "blocken",
     "to referee": "pfeifen",
     "to cheer": "jubeln",
-    "to coach": "trainieren",
+    "to coach": "coachen",
     "to qualify": "sich qualifizieren",
     "to improve": "sich verbessern"
 }

@@ -1,0 +1,34 @@
+import pandas as pd
+
+words = {
+    'the feeling': 'das Gefühl',
+    'the joy': 'die Freude',
+    'the sadness': 'die Traurigkeit',
+    'the anger': 'die Wut',
+    'the fear': 'die Angst',
+    'the worry': 'die Sorge',
+    'the hope': 'die Hoffnung',
+    'the love': 'die Liebe',
+    'the hate': 'der Hass',
+    'the surprise': 'die Überraschung',
+    'the shame': 'die Scham',
+    'the pride': 'der Stolz',
+    'the jealousy': 'die Eifersucht',
+    'the gratitude': 'die Dankbarkeit',
+    'the trust': 'das Vertrauen',
+    'the doubt': 'der Zweifel',
+    'the stress': 'der Stress',
+    'the calm': 'die Ruhe',
+    'the patience': 'die Geduld',
+    'the mood': 'die Stimmung'
+}
+
+df = pd.DataFrame.from_dict(
+    words,
+    orient="index",
+    columns=["German"]
+)
+
+df.index.name = "English"
+
+df.to_csv("../csv-files/dict_Nomen_Gefuehle.csv")

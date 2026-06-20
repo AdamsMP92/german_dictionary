@@ -6,7 +6,7 @@ words = {
     "to cook": "kochen",
     "to bake": "backen",
     "to fry": "braten",
-    "to boil": "kochen",
+    "to boil": "aufkochen",
     "to roast": "rösten",
     "to grill": "grillen",
     "to cut": "schneiden",

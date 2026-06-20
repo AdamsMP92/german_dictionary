@@ -1,0 +1,34 @@
+import pandas as pd
+
+words = {
+    'the opinion': 'die Meinung',
+    'the idea': 'die Idee',
+    'the thought': 'der Gedanke',
+    'the argument': 'das Argument',
+    'the reason': 'der Grund',
+    'the example': 'das Beispiel',
+    'the advantage': 'der Vorteil',
+    'the disadvantage': 'der Nachteil',
+    'the agreement': 'die Zustimmung',
+    'the objection': 'der Einwand',
+    'the criticism': 'die Kritik',
+    'the praise': 'das Lob',
+    'the discussion': 'die Diskussion',
+    'the debate': 'die Debatte',
+    'the decision': 'die Entscheidung',
+    'the compromise': 'der Kompromiss',
+    'the perspective': 'die Perspektive',
+    'the conclusion': 'die Schlussfolgerung',
+    'the doubt': 'der Zweifel',
+    'the belief': 'die Überzeugung'
+}
+
+df = pd.DataFrame.from_dict(
+    words,
+    orient="index",
+    columns=["German"]
+)
+
+df.index.name = "English"
+
+df.to_csv("../csv-files/dict_Nomen_Meinung.csv")

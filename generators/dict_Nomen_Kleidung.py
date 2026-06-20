@@ -1,0 +1,34 @@
+import pandas as pd
+
+words = {
+    'the clothing': 'die Kleidung',
+    'the shirt': 'das Hemd',
+    'the blouse': 'die Bluse',
+    'the T-shirt': 'das T-Shirt',
+    'the sweater': 'der Pullover',
+    'the jacket': 'die Jacke',
+    'the coat': 'der Mantel',
+    'the trousers': 'die Hose',
+    'the jeans': 'die Jeans',
+    'the skirt': 'der Rock',
+    'the dress': 'das Kleid',
+    'the shoe': 'der Schuh',
+    'the sock': 'die Socke',
+    'the hat': 'der Hut',
+    'the cap': 'die Mütze',
+    'the scarf': 'der Schal',
+    'the glove': 'der Handschuh',
+    'the belt': 'der Gürtel',
+    'the button': 'der Knopf',
+    'the zipper': 'der Reißverschluss'
+}
+
+df = pd.DataFrame.from_dict(
+    words,
+    orient="index",
+    columns=["German"]
+)
+
+df.index.name = "English"
+
+df.to_csv("../csv-files/dict_Nomen_Kleidung.csv")

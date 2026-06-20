@@ -1,0 +1,34 @@
+import pandas as pd
+
+words = {
+    'to play music': 'Musik machen',
+    'to read': 'lesen',
+    'to watch': 'anschauen',
+    'to play': 'spielen',
+    'to draw': 'zeichnen',
+    'to paint': 'malen',
+    'to photograph': 'fotografieren',
+    'to collect': 'sammeln',
+    'to dance': 'tanzen',
+    'to sing': 'singen',
+    'to garden': 'gärtnern',
+    'to craft': 'basteln',
+    'to practice': 'üben',
+    'to relax': 'sich entspannen',
+    'to meet': 'treffen',
+    'to join': 'beitreten',
+    'to create': 'gestalten',
+    'to repair': 'reparieren',
+    'to listen': 'hören',
+    'to enjoy': 'genießen'
+}
+
+df = pd.DataFrame.from_dict(
+    words,
+    orient="index",
+    columns=["German"]
+)
+
+df.index.name = "English"
+
+df.to_csv("../csv-files/dict_Verben_Hobbys.csv")

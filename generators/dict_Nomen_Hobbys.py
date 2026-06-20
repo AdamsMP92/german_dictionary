@@ -1,0 +1,34 @@
+import pandas as pd
+
+words = {
+    'the hobby': 'das Hobby',
+    'the music': 'die Musik',
+    'the instrument': 'das Instrument',
+    'the guitar': 'die Gitarre',
+    'the piano': 'das Klavier',
+    'the book': 'das Buch',
+    'the film': 'der Film',
+    'the game': 'das Spiel',
+    'the garden': 'der Garten',
+    'the photo': 'das Foto',
+    'the camera': 'die Kamera',
+    'the drawing': 'die Zeichnung',
+    'the painting': 'das Gemälde',
+    'the club': 'der Verein',
+    'the collection': 'die Sammlung',
+    'the puzzle': 'das Rätsel',
+    'the craft': 'die Bastelarbeit',
+    'the dance': 'der Tanz',
+    'the concert': 'das Konzert',
+    'the free time': 'die Freizeit'
+}
+
+df = pd.DataFrame.from_dict(
+    words,
+    orient="index",
+    columns=["German"]
+)
+
+df.index.name = "English"
+
+df.to_csv("../csv-files/dict_Nomen_Hobbys.csv")

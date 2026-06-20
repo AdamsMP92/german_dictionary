@@ -63,7 +63,7 @@ words = {
     "the vaccination": "die Impfung",
     "the pharmacy": "die Apotheke",
     "the first-aid kit": "die Reiseapotheke",
-    "the guide": "der Reiseführer",
+    "the guide": "der Reiseleiter",
     "the tourist": "der Tourist",
     "the group": "die Gruppe",
     "the excursion bus": "der Reisebus",

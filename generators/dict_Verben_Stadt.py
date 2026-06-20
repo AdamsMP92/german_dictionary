@@ -4,7 +4,7 @@ words = {
     "to go": "gehen",
     "to walk": "laufen",
     "to drive": "fahren",
-    "to ride": "fahren",
+    "to ride": "mitfahren",
     "to take the bus": "Bus fahren",
     "to take the train": "Zug fahren",
     "to change trains": "umsteigen",

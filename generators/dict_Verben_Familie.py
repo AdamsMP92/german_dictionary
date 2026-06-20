@@ -37,7 +37,7 @@ words = {
     "to move": "umziehen",
     "to inherit": "erben",
     "to adopt": "adoptieren",
-    "to babysit": "babysitten",
+    "to babysit": "Kinder betreuen",
     "to hug": "umarmen",
     "to kiss": "küssen",
     "to comfort": "trösten"

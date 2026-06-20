@@ -10,3 +10,6 @@ pandas = "*"
 [tasks]
 create-dictionary = "python dictionary.py"
 test = "python test.py"
+generate = "bash generators/generate_all.sh"
+validate = "python validate_dictionaries.py"
+language-check = "python language_check.py"

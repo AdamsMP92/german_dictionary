@@ -1,0 +1,34 @@
+import pandas as pd
+
+words = {
+    'the weather': 'das Wetter',
+    'the sun': 'die Sonne',
+    'the cloud': 'die Wolke',
+    'the rain': 'der Regen',
+    'the snow': 'der Schnee',
+    'the wind': 'der Wind',
+    'the storm': 'der Sturm',
+    'the fog': 'der Nebel',
+    'the temperature': 'die Temperatur',
+    'the degree': 'das Grad',
+    'the heat': 'die Hitze',
+    'the cold': 'die Kälte',
+    'the thunderstorm': 'das Gewitter',
+    'the lightning': 'der Blitz',
+    'the thunder': 'der Donner',
+    'the forecast': 'die Vorhersage',
+    'the umbrella': 'der Regenschirm',
+    'the rainbow': 'der Regenbogen',
+    'the climate': 'das Klima',
+    'the season': 'die Jahreszeit'
+}
+
+df = pd.DataFrame.from_dict(
+    words,
+    orient="index",
+    columns=["German"]
+)
+
+df.index.name = "English"
+
+df.to_csv("../csv-files/dict_Nomen_Wetter.csv")

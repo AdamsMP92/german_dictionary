@@ -1,0 +1,34 @@
+import pandas as pd
+
+words = {
+    'the character': 'der Charakter',
+    'the personality': 'die Persönlichkeit',
+    'the habit': 'die Gewohnheit',
+    'the strength': 'die Stärke',
+    'the weakness': 'die Schwäche',
+    'the courage': 'der Mut',
+    'the patience': 'die Geduld',
+    'the honesty': 'die Ehrlichkeit',
+    'the kindness': 'die Freundlichkeit',
+    'the humor': 'der Humor',
+    'the discipline': 'die Disziplin',
+    'the ambition': 'der Ehrgeiz',
+    'the respect': 'der Respekt',
+    'the responsibility': 'die Verantwortung',
+    'the confidence': 'das Selbstvertrauen',
+    'the shyness': 'die Schüchternheit',
+    'the curiosity': 'die Neugier',
+    'the creativity': 'die Kreativität',
+    'the loyalty': 'die Treue',
+    'the attitude': 'die Haltung'
+}
+
+df = pd.DataFrame.from_dict(
+    words,
+    orient="index",
+    columns=["German"]
+)
+
+df.index.name = "English"
+
+df.to_csv("../csv-files/dict_Nomen_Charakter.csv")

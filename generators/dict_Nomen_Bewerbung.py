@@ -14,7 +14,7 @@ words = {
     "the human resources department": "die Personalabteilung",
     "the cover letter": "das Anschreiben",
     "the resume": "der Lebenslauf",
-    "the curriculum vitae": "der Lebenslauf",
+    "the curriculum vitae": "die Vita",
     "the certificate": "das Zeugnis",
     "the degree": "der Abschluss",
     "the qualification": "die Qualifikation",

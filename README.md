@@ -5,27 +5,55 @@ Wortart und Thema sortiert und liegen als CSV-Dateien vor.
 
 ## Aktueller Umfang
 
-Das Dictionary enthält aktuell 24 Vokabellisten mit insgesamt 1507 Einträgen:
+Das Dictionary enthält aktuell 75 Vokabellisten mit insgesamt 2527 Einträgen:
 
 | Wortart | Listen | Einträge |
 | --- | ---: | ---: |
-| Nomen mit Artikel | 8 | 867 |
-| Verben | 8 | 320 |
-| Adjektive | 8 | 320 |
-| Gesamt | 24 | 1507 |
+| Nomen mit Artikel | 25 | 1207 |
+| Verben | 25 | 660 |
+| Adjektive | 25 | 660 |
+| Gesamt | 75 | 2527 |
 
 ## Themen
 
 Alle Wortarten sind nach diesen Themen organisiert:
 
-- Arbeit
-- Bewerbung
+**Basis-Alltag**
+
+- Haus
 - Essen
 - Familie
-- Haus
+- Kleidung
+- Koerper
+- Gesundheit
+
+**Handlungsfähigkeit**
+
+- Arbeit
+- Bewerbung
+- Behoerden
+- Finanzen
+- Verkehr
+- Einkaufen
+
+**Ausdruck**
+
+- Gefuehle
+- Charakter
+- Kommunikation
+- Zeit
+- Wetter
+- Meinung
+
+**Interessen**
+
 - Sport
-- Stadt
 - Urlaub
+- Hobbys
+- Medien
+- Natur
+- Technik
+- Stadt
 
 ## Struktur
 
@@ -51,11 +79,46 @@ Die Python-Dateien in `generators/` sind die Quellen. Die CSV-Dateien in
 ## CSV-Dateien neu erzeugen
 
 ```bash
-generators/generate_all.sh
+pixi run generate
 ```
 
-Das Skript erzeugt alle CSV-Dateien neu. Es nutzt normales `python`, wenn Pandas
-verfügbar ist, und fällt sonst auf `pixi run python` zurück.
+Der Task führt `generators/generate_all.sh` aus und erzeugt alle CSV-Dateien neu.
+Das Skript nutzt normales `python`, wenn Pandas verfügbar ist, und fällt sonst
+auf `pixi run python` zurück.
+
+## CSV-Dateien prüfen
+
+```bash
+pixi run validate
+```
+
+Der Validator prüft die Dictionary-Dateien auf grobe Plausibilität:
+
+- gültiges Namensschema wie `dict_Nomen_Haus.csv`
+- passende Generator-Datei
+- mindestens zwei Spalten
+- leere Einträge
+- doppelte Fragen oder doppelte Wortpaare
+- Nomen mit `the ...` und `der/die/das ...`
+- Verben mit `to ...`
+- Mindestanzahl pro Liste
+
+## Manueller LanguageTool-Check
+
+```bash
+pixi run language-check
+```
+
+Dieser Developer-Check nutzt das lokal installierte `languagetool` CLI und
+schreibt einen Report nach `validation_reports/languagetool_report.md`.
+Standardmäßig werden nur typo-nahe LanguageTool-Regeln ausgewertet, damit kurze
+Wörterbuch-Einträge nicht zu viele Grammatik-False-Positives erzeugen.
+
+Für einen vollständigen LanguageTool-Report:
+
+```bash
+pixi run python language_check.py --all-rules
+```
 
 ## Vokabeltest starten
 
