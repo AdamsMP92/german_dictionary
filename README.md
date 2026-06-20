@@ -20,40 +20,48 @@ Alle Wortarten sind nach diesen Themen organisiert:
 
 **Basis-Alltag**
 
-- Haus
-- Essen
-- Familie
-- Kleidung
-- Koerper
-- Gesundheit
+| Thema | Nomen | Verben | Adjektive | Gesamt |
+| --- | ---: | ---: | ---: | ---: |
+| Haus | 167 | 40 | 40 | 247 |
+| Essen | 100 | 40 | 40 | 180 |
+| Familie | 100 | 40 | 40 | 180 |
+| Kleidung | 20 | 20 | 20 | 60 |
+| Koerper | 20 | 20 | 20 | 60 |
+| Gesundheit | 20 | 20 | 20 | 60 |
 
 **Handlungsfähigkeit**
 
-- Arbeit
-- Bewerbung
-- Behoerden
-- Finanzen
-- Verkehr
-- Einkaufen
+| Thema | Nomen | Verben | Adjektive | Gesamt |
+| --- | ---: | ---: | ---: | ---: |
+| Arbeit | 100 | 40 | 40 | 180 |
+| Bewerbung | 100 | 40 | 40 | 180 |
+| Behoerden | 20 | 20 | 20 | 60 |
+| Finanzen | 20 | 20 | 20 | 60 |
+| Verkehr | 20 | 20 | 20 | 60 |
+| Einkaufen | 20 | 20 | 20 | 60 |
 
 **Ausdruck**
 
-- Gefuehle
-- Charakter
-- Kommunikation
-- Zeit
-- Wetter
-- Meinung
+| Thema | Nomen | Verben | Adjektive | Gesamt |
+| --- | ---: | ---: | ---: | ---: |
+| Gefuehle | 25 | 23 | 23 | 71 |
+| Charakter | 25 | 23 | 23 | 71 |
+| Kommunikation | 20 | 20 | 20 | 60 |
+| Zeit | 25 | 23 | 23 | 71 |
+| Wetter | 25 | 23 | 23 | 71 |
+| Meinung | 25 | 23 | 23 | 71 |
 
 **Interessen**
 
-- Sport
-- Urlaub
-- Hobbys
-- Medien
-- Natur
-- Technik
-- Stadt
+| Thema | Nomen | Verben | Adjektive | Gesamt |
+| --- | ---: | ---: | ---: | ---: |
+| Sport | 100 | 40 | 40 | 180 |
+| Urlaub | 100 | 40 | 40 | 180 |
+| Hobbys | 20 | 20 | 20 | 60 |
+| Medien | 20 | 20 | 20 | 60 |
+| Natur | 20 | 20 | 20 | 60 |
+| Technik | 20 | 20 | 20 | 60 |
+| Stadt | 100 | 40 | 40 | 180 |
 
 ## Struktur
 
