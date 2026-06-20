@@ -111,4 +111,4 @@ df = pd.DataFrame.from_dict(
 
 df.index.name = "English"
 
-df.to_csv("dict_Nomen_Bewerbung.csv")
+df.to_csv("../csv-files/dict_Nomen_Bewerbung.csv")

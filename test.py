@@ -7,8 +7,29 @@ from pathlib import Path
 # Dictionary-Datei auswählen
 # ------------------------------------------------------------
 
-dictionary_file = input("Welche Dictionary-Datei soll geladen werden? ").strip()
-dictionary_path = Path(dictionary_file)
+dictionary_dir = Path("csv-files")
+available_dictionaries = sorted(dictionary_dir.glob("*.csv"))
+
+if available_dictionaries:
+    print("Verfügbare Dictionary-Dateien:")
+    for i, path in enumerate(available_dictionaries, start=1):
+        print(f"{i}. {path.name}")
+    print()
+
+dictionary_file = input(
+    "Welche Dictionary-Datei soll geladen werden? "
+    "Nummer oder Dateipfad eingeben: "
+).strip()
+
+if dictionary_file.isdigit() and available_dictionaries:
+    selected_index = int(dictionary_file) - 1
+    if not 0 <= selected_index < len(available_dictionaries):
+        raise ValueError("Ungültige Dictionary-Nummer.")
+    dictionary_path = available_dictionaries[selected_index]
+else:
+    dictionary_path = Path(dictionary_file)
+    if not dictionary_path.exists():
+        dictionary_path = dictionary_dir / dictionary_file
 
 if not dictionary_path.exists():
     raise FileNotFoundError(f"Dictionary file nicht gefunden: {dictionary_file}")

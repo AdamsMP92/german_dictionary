@@ -51,4 +51,4 @@ df = pd.DataFrame.from_dict(
 
 df.index.name = "English"
 
-df.to_csv("dict_Verben_Stadt.csv")
+df.to_csv("../csv-files/dict_Verben_Stadt.csv")
