@@ -5,14 +5,14 @@ Wortart und Thema sortiert und liegen als CSV-Dateien vor.
 
 ## Aktueller Umfang
 
-Das Dictionary enthält aktuell 75 Vokabellisten mit insgesamt 2582 Einträgen:
+Das Dictionary enthält aktuell 75 Vokabellisten mit insgesamt 2902 Einträgen:
 
 | Wortart | Listen | Einträge |
 | --- | ---: | ---: |
-| Nomen mit Artikel | 25 | 1232 |
+| Nomen mit Artikel | 25 | 1552 |
 | Verben | 25 | 675 |
 | Adjektive | 25 | 675 |
-| Gesamt | 75 | 2582 |
+| Gesamt | 75 | 2902 |
 
 ## Themen
 
@@ -57,10 +57,10 @@ Alle Wortarten sind nach diesen Themen organisiert:
 | --- | ---: | ---: | ---: | ---: |
 | Sport | 100 | 40 | 40 | 180 |
 | Urlaub | 100 | 40 | 40 | 180 |
-| Hobbys | 20 | 20 | 20 | 60 |
-| Medien | 20 | 20 | 20 | 60 |
-| Natur | 20 | 20 | 20 | 60 |
-| Technik | 20 | 20 | 20 | 60 |
+| Hobbys | 100 | 20 | 20 | 140 |
+| Medien | 100 | 20 | 20 | 140 |
+| Natur | 100 | 20 | 20 | 140 |
+| Technik | 100 | 20 | 20 | 140 |
 | Stadt | 100 | 40 | 40 | 180 |
 
 ## Struktur
