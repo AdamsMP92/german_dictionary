@@ -1,7 +1,7 @@
 [workspace]
 name = "dictionary"
 channels = ["conda-forge"]
-platforms = ["osx-arm64"]
+platforms = ["osx-arm64", "osx-64"]
 
 [dependencies]
 python = ">=3.12"
