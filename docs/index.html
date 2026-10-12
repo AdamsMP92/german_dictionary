@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#24443a" />
+    <title>German Dictionary Trainer</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">German Dictionary</p>
+          <h1>Vokabeltrainer</h1>
+        </div>
+        <div class="summary" aria-live="polite">
+          <strong id="totalCount">-</strong>
+          <span>Einträge</span>
+        </div>
+      </header>
+
+      <section class="controls" aria-label="Trainingsauswahl">
+        <label>
+          Thema
+          <select id="topicSelect"></select>
+        </label>
+        <label>
+          Wortart
+          <select id="wordTypeSelect"></select>
+        </label>
+        <label>
+          Richtung
+          <select id="directionSelect">
+            <option value="en-de">English -> Deutsch</option>
+            <option value="de-en">Deutsch -> English</option>
+          </select>
+        </label>
+        <label>
+          Anzahl
+          <input id="countInput" type="number" min="1" max="500" value="20" />
+        </label>
+        <button id="startButton" type="button">Start</button>
+      </section>
+
+      <section class="trainer" aria-live="polite">
+        <div class="status-row">
+          <span id="progressText">Bereit</span>
+          <span id="scoreText">0 / 0</span>
+        </div>
+
+        <div class="prompt-area">
+          <p id="promptLabel">Frage</p>
+          <h2 id="promptText">Wähle eine Liste und starte den Test.</h2>
+        </div>
+
+        <form id="answerForm" class="answer-form">
+          <input
+            id="answerInput"
+            type="text"
+            autocomplete="off"
+            autocapitalize="none"
+            spellcheck="false"
+            placeholder="Antwort eingeben"
+          />
+          <button type="submit">Prüfen</button>
+        </form>
+
+        <div id="feedback" class="feedback" hidden></div>
+      </section>
+
+      <section class="results" id="resultsSection" hidden>
+        <div class="results-header">
+          <h2>Auswertung</h2>
+          <button id="retryWrongButton" type="button">Fehler wiederholen</button>
+        </div>
+        <div id="resultSummary"></div>
+        <ul id="wrongList"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

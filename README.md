@@ -85,6 +85,8 @@ csv-files/
 
 test.py
 pruefung.py
+iphone_test.py
+build_web_dictionary.py
 pixi.toml
 ```
 
@@ -148,6 +150,33 @@ werden.
 `test.py` enthält außerdem die gemeinsame Logik zum Laden, Abfragen und Loggen
 eines einzelnen Vokabeltests. Das Prüfungsprogramm nutzt diese Funktionen und
 startet mehrere normale Testläufe nacheinander.
+
+## Einfacher iPhone-Test
+
+```bash
+python3 iphone_test.py
+```
+
+`iphone_test.py` nutzt nur die Python-Standardbibliothek und ist als einfache
+Variante für Python-Apps auf iPhone oder iPad gedacht. Dafür müssen nur
+`iphone_test.py` und der Ordner `csv-files/` auf dem Gerät liegen.
+
+## Web-App
+
+Die statische Web-App liegt in `docs/` und kann über GitHub Pages veröffentlicht
+werden. Die Datei `docs/dictionary.json` wird aus den CSV-Dateien erzeugt:
+
+```bash
+python3 build_web_dictionary.py
+```
+
+Lokal testen:
+
+```bash
+python3 -m http.server 8000 -d docs
+```
+
+Dann `http://localhost:8000` im Browser öffnen.
 
 ## Prüfungsprogramm starten
 
