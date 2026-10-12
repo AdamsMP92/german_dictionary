@@ -1,5 +1,7 @@
 # German Dictionary
 
+[![Website](https://img.shields.io/badge/Website-Vokabeltrainer-2f6654)](https://AdamsMP92.github.io/german_dictionary/)
+
 Ein kleiner digitaler Vokabelkasten für Deutschlernende. Die Wortlisten sind nach
 Wortart und Thema sortiert und liegen als CSV-Dateien vor.
 
