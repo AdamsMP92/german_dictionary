@@ -150,6 +150,7 @@ function submitAnswer(event) {
   }
 
   if (state.answered) {
+    goToNextQuestion();
     return;
   }
 
@@ -175,7 +176,6 @@ function submitAnswer(event) {
   updateStatus();
   els.answerInput.value = "";
   els.answerInput.placeholder = "Weiter drücken";
-  els.nextButton.focus();
 }
 
 function goToNextQuestion() {
