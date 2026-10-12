@@ -3,6 +3,7 @@ const state = {
   pool: [],
   questions: [],
   currentIndex: 0,
+  answeredCount: 0,
   correct: 0,
   wrong: [],
   answered: false,
@@ -21,6 +22,7 @@ const els = {
   promptText: document.querySelector("#promptText"),
   answerForm: document.querySelector("#answerForm"),
   answerInput: document.querySelector("#answerInput"),
+  nextButton: document.querySelector("#nextButton"),
   feedback: document.querySelector("#feedback"),
   resultsSection: document.querySelector("#resultsSection"),
   resultSummary: document.querySelector("#resultSummary"),
@@ -97,7 +99,7 @@ function updateStatus() {
   const total = state.questions.length;
   const current = Math.min(state.currentIndex + 1, total);
   els.progressText.textContent = total ? `${current} / ${total}` : "Bereit";
-  els.scoreText.textContent = `${state.correct} / ${state.currentIndex}`;
+  els.scoreText.textContent = `${state.correct} / ${state.answeredCount}`;
 }
 
 function showCurrentQuestion() {
@@ -111,6 +113,8 @@ function showCurrentQuestion() {
   els.promptText.textContent = question.prompt;
   els.answerInput.value = "";
   els.answerInput.placeholder = `${question.answerLabel} eingeben`;
+  els.answerInput.disabled = false;
+  els.nextButton.disabled = true;
   els.feedback.hidden = true;
   els.feedback.className = "feedback";
   state.answered = false;
@@ -130,6 +134,7 @@ function startQuiz(pool = null) {
   state.pool = selected;
   state.questions = shuffle(selected).slice(0, count).map(makeQuestion);
   state.currentIndex = 0;
+  state.answeredCount = 0;
   state.correct = 0;
   state.wrong = [];
   state.answered = false;
@@ -145,8 +150,6 @@ function submitAnswer(event) {
   }
 
   if (state.answered) {
-    state.currentIndex += 1;
-    showCurrentQuestion();
     return;
   }
 
@@ -166,10 +169,22 @@ function submitAnswer(event) {
 
   els.feedback.hidden = false;
   state.answered = true;
-  state.currentIndex += 1;
+  state.answeredCount += 1;
+  els.answerInput.disabled = true;
+  els.nextButton.disabled = false;
   updateStatus();
   els.answerInput.value = "";
-  els.answerInput.placeholder = "Enter für nächste Frage";
+  els.answerInput.placeholder = "Weiter drücken";
+  els.nextButton.focus();
+}
+
+function goToNextQuestion() {
+  if (!state.answered) {
+    return;
+  }
+
+  state.currentIndex += 1;
+  showCurrentQuestion();
 }
 
 function finishQuiz() {
@@ -181,6 +196,8 @@ function finishQuiz() {
   els.scoreText.textContent = `${state.correct} / ${total}`;
   els.promptLabel.textContent = "Auswertung";
   els.promptText.textContent = `${percent}% richtig`;
+  els.answerInput.disabled = true;
+  els.nextButton.disabled = true;
   els.feedback.hidden = true;
   els.resultsSection.hidden = false;
   els.resultSummary.innerHTML = `
@@ -210,6 +227,7 @@ async function init() {
 
 els.startButton.addEventListener("click", () => startQuiz());
 els.answerForm.addEventListener("submit", submitAnswer);
+els.nextButton.addEventListener("click", goToNextQuestion);
 els.retryWrongButton.addEventListener("click", () => {
   const pool = state.wrong.map(({ question }) => question.entry);
   els.countInput.value = String(pool.length);
