@@ -5,6 +5,10 @@
 Ein kleiner digitaler Vokabelkasten für Deutschlernende. Die Wortlisten sind nach
 Wortart und Thema sortiert und liegen als CSV-Dateien vor.
 
+Hinweis: Die Wortlisten sind als Lernmaterial gedacht. Vollständigkeit,
+fachliche Korrektheit und Fehlerfreiheit der Übersetzungen werden nicht
+garantiert.
+
 ## Aktueller Umfang
 
 Das Dictionary enthält aktuell 78 Vokabellisten mit insgesamt 3984 Einträgen:
