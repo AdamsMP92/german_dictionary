@@ -14,6 +14,7 @@ const els = {
   topicSelect: document.querySelector("#topicSelect"),
   wordTypeSelect: document.querySelector("#wordTypeSelect"),
   directionSelect: document.querySelector("#directionSelect"),
+  countLabel: document.querySelector("#countLabel"),
   countInput: document.querySelector("#countInput"),
   startButton: document.querySelector("#startButton"),
   progressText: document.querySelector("#progressText"),
@@ -63,6 +64,8 @@ function fillControls(data) {
     const count = data.entries.filter((entry) => entry.wordType === wordType).length;
     els.wordTypeSelect.append(option(wordType, `${wordType} (${count})`));
   });
+
+  updateCountHint();
 }
 
 function currentPool() {
@@ -73,6 +76,21 @@ function currentPool() {
     const typeMatches = wordType === "Alle" || entry.wordType === wordType;
     return topicMatches && typeMatches;
   });
+}
+
+function updateCountHint() {
+  if (!state.data) {
+    return;
+  }
+
+  const available = currentPool().length;
+  els.countLabel.textContent = `Anzahl (max. ${available})`;
+  els.countInput.max = String(Math.max(available, 1));
+
+  const currentValue = Number.parseInt(els.countInput.value, 10) || 1;
+  if (available > 0 && currentValue > available) {
+    els.countInput.value = String(available);
+  }
 }
 
 function makeQuestion(entry) {
@@ -226,6 +244,8 @@ async function init() {
 }
 
 els.startButton.addEventListener("click", () => startQuiz());
+els.topicSelect.addEventListener("change", updateCountHint);
+els.wordTypeSelect.addEventListener("change", updateCountHint);
 els.answerForm.addEventListener("submit", submitAnswer);
 els.nextButton.addEventListener("click", goToNextQuestion);
 els.retryWrongButton.addEventListener("click", () => {
