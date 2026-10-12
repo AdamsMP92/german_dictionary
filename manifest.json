@@ -1,0 +1,9 @@
+{
+  "name": "German Dictionary Trainer",
+  "short_name": "Dictionary",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f1e8",
+  "theme_color": "#24443a",
+  "icons": []
+}
